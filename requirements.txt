@@ -7,6 +7,6 @@ pandas
 pillow
 pyparsing
 python-dateutil
-pytz==2024.1
+pytz
 scikit-learn
 scipy

@@ -54,7 +54,7 @@ if st.button('Realizar predicción'):
         'Nota: Esta predicción es solo una estimación. Siempre consulte con un profesional médico para un diagnóstico preciso.')
 
 # Información adicional
-st.sidebar.header('Información')
+st.sidebar.header('Información general')
 st.sidebar.write(
     'Esta aplicación utiliza un modelo de regresión logística para predecir si un tumor de mama es benigno o maligno basándose en varias características medidas.')
 st.sidebar.write(

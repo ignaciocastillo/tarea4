@@ -7,7 +7,6 @@ from sklearn.metrics import accuracy_score
 import matplotlib.pyplot as plt
 import joblib
 
-
 # --------------------------------------------
 # READ THE DATASET
 # --------------------------------------------
@@ -26,7 +25,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 # --------------------------------------------
 pipeline = Pipeline(steps=[
     ('scaler', StandardScaler()),
-    ('classifier', LogisticRegression())
+    ('classifier', LogisticRegression(solver='liblinear', max_iter=1000))
 ])
 
 # --------------------------------------------
@@ -65,7 +64,7 @@ y_pred = best_model.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
 
 with open("metrics.txt", 'w') as outfile:
-    outfile.write("Training accuracy: %2.1f%%\n" % accuracy)
+    outfile.write("Training accuracy: %2.1f%%\n" % (accuracy * 100))
 
 # --------------------------------------------
 # SERIALIZING
